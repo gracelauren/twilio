@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+describe Message do
+  it { should belong_to :admirer }
+end
+
 describe Message, :vcr => true do
   it "doesn't save the message if twilio gives an error" do
     message = FactoryGirl.build(:message, to: '1111111')
