@@ -1,0 +1,4 @@
+<li>
+  <p> To: <%= message.to %> On: <%= message.created_at %> </p>
+  <p> Text: <%= message.body %><%= link_to "...", admirer_message_path(@admirer, message) %> </p>
+</li>

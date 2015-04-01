@@ -16,6 +16,7 @@
 
 
  @import 'bootstrap-sprockets';
+ @import 'bootswatch/cerulean/variables';
  @import 'bootstrap';
  @import url(http://fonts.googleapis.com/css?family=Dosis);
 
@@ -23,5 +24,17 @@
  $font-stack: 'Dosis', sans-serif;
 
  body {
-   font: 100% $font-stack;
+   font: 150% $font-stack;
  }
+
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar-brand img {
+  height: 100%;
+}
+
+.actions {
+  padding: 10px;
+}

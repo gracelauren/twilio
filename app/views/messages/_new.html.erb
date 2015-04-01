@@ -1,0 +1,7 @@
+<%= bootstrap_form_for [@admirer, @message], remote:true do |f| %>
+  <div class="form-group">
+    <%= f.phone_field :to %>
+    <%= f.text_field :body %>
+  </div>
+  <%= f.submit "Send your text!" %>
+<% end %>

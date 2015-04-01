@@ -1,0 +1,5 @@
+<%= link_to "Want to send a text?", new_admirer_message_path(current_admirer), class: "btn btn-primary", id: 'send_button', remote: true  %>
+
+<ul id="messages">
+  <%= render @messages.reverse %>
+</ul>
