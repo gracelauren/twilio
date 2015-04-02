@@ -38,3 +38,15 @@
 .actions {
   padding: 10px;
 }
+
+.trunq{
+  white-space: nowrap;
+  width: 5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2FA4E7;
+}
+
+.norm{
+  color: black;
+}

@@ -1,1 +1,4 @@
-<%= @message.body %>
+<p>Sent on: <%= @message.created_at %></p>
+<p>Sent to: <%= @message.to %></p>
+<p>Sent from: <%= @message.from %></p>
+<p>Full message text: <%= @message.body %></p>

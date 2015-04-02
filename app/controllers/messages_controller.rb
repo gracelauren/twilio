@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
           flash[:notice] = "Your message was sent."
           redirect_to admirer_messages_path(@admirer)
         end
-        format.js { render js: "alert('Your message sent.');"}
+        format.js 
       end
     else
       respond_to do |format|
