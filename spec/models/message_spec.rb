@@ -3,10 +3,9 @@ require 'rails_helper'
 describe Message do
   it { should belong_to :admirer }
 
-  it "doesn't save the message if it contains less than 7 digits" do
-    message = FactoryGirl.build(:message, to: "12345")
-    binding.pry
-    message.save should be false
+  it "doesn't save the message if the to field contains letters" do
+    message = FactoryGirl.build(:message, to: "henry")
+    expect(message.save).to eq false
   end
 end
 

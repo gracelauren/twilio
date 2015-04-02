@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:50016/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.0/2014-12-25)
+      Date:
+      - Thu, 02 Apr 2015 18:22:49 GMT
+      Content-Length:
+      - '14'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '70111137550660'
+    http_version: 
+  recorded_at: Thu, 02 Apr 2015 18:22:49 GMT
+- request:
+    method: post
+    uri: https://<twilio account sid>:<twilio auth token>@api.twilio.com/2010-04-01/Accounts/<twilio
+      account sid>/Messages.json
+    body:
+      encoding: US-ASCII
+      string: Body=Hello%20Friend!&To=7085038000&From=15005550006
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 02 Apr 2015 18:22:51 GMT
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '702'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SM68a4545638da4121b6ad4717befc54d2", "date_created": "Thu,
+        02 Apr 2015 18:22:51 +0000", "date_updated": "Thu, 02 Apr 2015 18:22:51 +0000",
+        "date_sent": null, "account_sid": "<twilio account sid>", "to": "+17085038000",
+        "from": "15005550006", "body": "Hello Friend!", "status": "queued", "num_segments":
+        "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01",
+        "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/<twilio account
+        sid>/Messages/SM68a4545638da4121b6ad4717befc54d2.json", "subresource_uris":
+        {"media": "/2010-04-01/Accounts/<twilio account sid>/Messages/SM68a4545638da4121b6ad4717befc54d2/Media.json"}}'
+    http_version: 
+  recorded_at: Thu, 02 Apr 2015 18:22:51 GMT
+recorded_with: VCR 2.9.3

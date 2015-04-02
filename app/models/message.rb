@@ -1,18 +1,11 @@
 class Message < ActiveRecord::Base
-  before_create :send_message, :check_num?
+  before_create :send_message
   belongs_to :admirer
+  validates :to, format: { with: /[^A-Za-z]/,
+    message: "does not allow letters" }
 
 
 private
-
-  def check_num?
-    if self.to.length >= 7 && self.to == /[^A-Za-z]/
-      true
-    else
-      false
-    end
-  end
-
 
   def send_message
     begin
