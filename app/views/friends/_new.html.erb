@@ -1,0 +1,7 @@
+<%= bootstrap_form_for [@admirer, @friend], remote:true do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name %>
+    <%= f.telephone_field :phone %>
+  </div>
+  <%= f.submit "Add Friend" %>
+<% end %>

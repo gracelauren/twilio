@@ -1,5 +1,6 @@
 <% if admirer_signed_in? %>
   <%= link_to "Messages", admirer_messages_path(current_admirer), class: "btn btn-success" %>
+  <%= link_to "Friends", admirer_friends_path(current_admirer), class: "btn btn-primary" %>
 <% else %>
   <p>Sign up or log in to send SMS messages to your friends!</p>
 <% end %>

@@ -1,0 +1,12 @@
+<% if @friend.save %>
+  $('#new_friend').remove();
+  $('#friend_button').show();
+  $('#friends').append('<%= j render(@friend) %>');
+  $('#flashes').fadeIn(1000);
+  $('#flashes').html('<%= j flash[:notice] %>');
+  $('#flashes').fadeOut(1000);
+<% else %>
+  $('#flashes').fadeIn(1000);
+  $('#flashes').html('<%= j flash[:alert] %>');
+  $('#flashes').fadeOut(slow);
+<% end %>

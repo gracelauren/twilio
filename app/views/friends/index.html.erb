@@ -1,0 +1,7 @@
+<h3>Here are your friends!</h3>
+
+<ul id="friends">
+<%= render @friends %>
+</ul>
+
+<%= link_to 'New Friend', new_admirer_friend_path, class: "btn btn-warning", id: "friend_button", remote: true %>
