@@ -1,8 +1,18 @@
 class Message < ActiveRecord::Base
-  before_create :send_message
+  before_create :send_message, :check_num?
   belongs_to :admirer
 
+
 private
+
+  def check_num?
+    if self.to.length >= 7 && self.to == /[^A-Za-z]/
+      true
+    else
+      false
+    end
+  end
+
 
   def send_message
     begin
@@ -16,7 +26,7 @@ private
                       :From => from }
 
       ).execute
-binding.pry
+
     rescue RestClient::BadRequest => error
       message = JSON.parse(error.response)['message']
       errors.add(:base, message)

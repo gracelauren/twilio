@@ -1,6 +1,6 @@
 <%= bootstrap_form_for [@admirer, @message], remote:true do |f| %>
   <div class="form-group">
-    <%= f.telephone_field :to, id: "inputTell", class: "bfh-phone", data_format: "(ddd) ddd-dddd" %>
+    <%= f.telephone_field :to %>
     <%= f.text_field :body %>
   </div>
   <%= f.submit "Send your text!" %>

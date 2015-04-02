@@ -2,6 +2,12 @@ require 'rails_helper'
 
 describe Message do
   it { should belong_to :admirer }
+
+  it "doesn't save the message if it contains less than 7 digits" do
+    message = FactoryGirl.build(:message, to: "12345")
+    binding.pry
+    message.save should be false
+  end
 end
 
 describe Message, :vcr => true do
@@ -48,6 +54,18 @@ describe Message, :vcr => true do
 
   it 'saves a message if the from and to numbers are correct' do
     message = FactoryGirl.build(:message)
+    message.save
+    message[:body].should eq "Hello World!"
+  end
+
+  it 'saves a message if the from and to numbers are correct' do
+    message = FactoryGirl.build(:message, :to => '(708)503-8000')
+    message.save
+    message[:body].should eq "Hello World!"
+  end
+
+  it 'saves a message if the from and to numbers are correct' do
+    message = FactoryGirl.build(:message, :to => '708.503.8000')
     message.save
     message[:body].should eq "Hello World!"
   end

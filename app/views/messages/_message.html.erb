@@ -1,4 +1,6 @@
 <li>
   <p> To: <%= message.to %> On: <%= message.created_at %> </p>
   <p class = "trunq" > <span class="norm">Text:</span> <%= link_to message.body, admirer_message_path(@admirer, message) %> </p>
+  <!-- <%=h truncate(message.body, :length => 8) %> -->
+
 </li>
