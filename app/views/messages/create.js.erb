@@ -1,3 +1,12 @@
-$('#new_message').remove();
-$('#send_button').show();
-$('#messages').prepend('<%= j render(@message) %>');
+<% if @message.save %>
+  $('#new_message').remove();
+  $('#send_button').show();
+  $('#flashes').fadeIn(1000);
+  $('#flashes').html('<%= j flash[:notice] %>');
+  $('#flashes').fadeOut(1000);
+  $('#messages').prepend('<%= j render(@message) %>');
+<% else %>
+  $('#flashes').fadeIn(1000);
+  $('#flashes').html('<%= j flash[:alert] %>');
+  $('#flashes').fadeOut(slow);
+<% end %>

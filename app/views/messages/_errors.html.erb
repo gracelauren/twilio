@@ -1,0 +1,8 @@
+<% if @message.errors.any? %>
+<h3>Please fix these errors:</h3>
+<ul>
+  <% @message.errors.messages[:base].each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>

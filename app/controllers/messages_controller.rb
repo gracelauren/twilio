@@ -20,15 +20,15 @@ class MessagesController < ApplicationController
           flash[:notice] = "Your message was sent."
           redirect_to admirer_messages_path(@admirer)
         end
-        format.js 
+        format.js { flash.now[:notice] = "Your message was sent." }
       end
     else
       respond_to do |format|
         format.html do
-          flash[:error] = "Oops, something went wrong."
+          flash[:alert]
           render :new
         end
-        format.js { render js: "alert('It did not send.');"}
+        format.js { flash.now[:alert] = render_to_string :partial => 'messages/errors' }
       end
     end
   end

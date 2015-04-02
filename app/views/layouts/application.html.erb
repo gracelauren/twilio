@@ -10,8 +10,10 @@
   <%= render 'layouts/navbar' %>
   <div class="container">
     <h1>Texting App</h1>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div id="flashes">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
     <%= yield %>
   </div>
 </body>
